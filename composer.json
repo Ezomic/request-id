@@ -1,0 +1,47 @@
+{
+    "name": "thijssensoftware/request-id",
+    "description": "Stamps a correlation id on every request, queued job and console command, and forwards it to trusted hosts.",
+    "type": "library",
+    "license": "proprietary",
+    "version": "0.1.0",
+    "require": {
+        "php": "^8.3",
+        "illuminate/support": "^11.0|^12.0|^13.0",
+        "illuminate/http": "^11.0|^12.0|^13.0",
+        "illuminate/console": "^11.0|^12.0|^13.0",
+        "illuminate/queue": "^11.0|^12.0|^13.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^9.0|^10.0|^11.0",
+        "pestphp/pest": "^3.0|^4.0",
+        "laravel/pint": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Thijssensoftware\\RequestId\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Thijssensoftware\\RequestId\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Thijssensoftware\\RequestId\\RequestIdServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "test": "pest",
+        "lint": "pint"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
